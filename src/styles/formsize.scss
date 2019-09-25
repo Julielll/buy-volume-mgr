@@ -1,0 +1,166 @@
+/*
+本css用于控制界面表格、输入框等字体大小及间距，覆盖了部分element-ui的样式
+*/
+
+
+//================start=================================================
+/*
+因本人特殊嗜好，喜欢小字体，紧凑界面；
+所以用以下样式强制将element-ui的表格和输入框的字体及边距调小了；
+如有不喜欢的可以将一下代码删除
+*/
+.app-container {
+    .el-table td .el-button--mini {
+        padding: 5px 15px !important;
+    }
+    .el-table th, .el-table td {
+        padding: 5px 0 !important;
+    }
+    .el-table .cell {
+        padding: 0 5px !important;
+        line-height: 20px !important;
+    }
+    .el-table th > .cell {
+        color: #333 !important;
+        line-height: 30px !important;
+    }
+    .el-table__body tr.current-row > td {
+        background: #CCE6FF !important;
+        color: #333 !important;
+    }
+    .el-card__body {
+        padding: 16px 8px !important;
+    }
+    .el-input {
+        font-size: 12px !important;
+    
+        input, .el-input__inner {
+        height: 30px !important;
+        line-height: 30px !important;
+        }
+    
+        .el-input__icon {
+        height: 30px !important;
+        line-height: 30px !important;
+        }
+    }
+    .el-tree__empty-text {
+        font-size: 12px !important;
+    }
+    .el-select-dropdown__item {
+        font-size: 12px !important;
+        height: 30px !important;
+        line-height: 30px !important;
+    }
+    .vue-treeselect__control {
+        height: 30px !important;
+        border: 1px solid #DCDFE6 !important;
+    }
+    .vue-treeselect__input-container {
+        line-height: 28px;
+    }
+    .vue-treeselect__placeholder,
+    .vue-treeselect__single-value {
+        font-size: 12px !important;
+        line-height: 28px !important;
+    }
+    .el-tree-node__label {
+        font-size: 12px !important;
+    }
+    .vue-treeselect__menu-container * {
+        font-size: 12px !important;
+        line-height: 28px !important;
+    }
+}
+//================end=================================================
+  
+/*
+覆盖Element-UI日历控件尺寸
+*/
+.el-date-picker {
+    width: 220px !important;
+}
+.el-date-picker .el-picker-panel__content{
+    width: 210px !important;
+}
+.el-date-picker__header {
+    margin: 4px !important;
+    margin-bottom: 0 !important;
+}
+.el-picker-panel__content {
+    margin: 4px !important;
+    margin-top: 0 !important;
+}
+.el-date-table th {
+    text-align:center !important;
+    padding: 3px !important;
+    line-height: 24px !important;
+}
+.el-date-table td {
+    padding: 2px 0 !important;
+}
+.el-date-table td div {
+    padding: 3px 0 !important;
+}
+.el-input--small {
+    font-size: 12px !important;
+}
+.el-input--small .el-input__inner {
+    height: 32px !important;
+    line-height: 32px !important;
+}
+.el-popper[x-placement^=bottom] {
+    margin-top: 5px !important;
+}
+.el-date-picker__header-label {
+    font-size: 14px !important;
+}
+
+.el-select-dropdown__item {
+    font-size: 12px !important;
+    height: 32px !important;
+    line-height: 32px !important;
+    padding: 0 10px;
+}
+.el-select-dropdown__empty {
+    font-size: 12px !important;
+}
+
+.el-range-editor--small {
+    width: 240px !important;
+}
+.el-range-editor--small .el-range-separator{
+    font-size: 12px !important;
+    min-width: 14px !important;
+}
+.el-date-range-picker {
+    width: 460px !important;
+}
+.el-date-range-picker .el-picker-panel__body{
+    width: 455px !important;
+    min-width: 455px !important;
+}
+.el-date-range-picker .el-picker-panel__content{
+    padding: 5px !important;
+}
+.el-date-range-picker__header div {
+    font-size: 14px !important;
+}
+.el-range-editor--small .el-range-input {
+    font-size: 12px !important;
+}
+
+.vue-treeselect__control {
+    height: 28px !important;
+}
+.vue-treeselect__single-value {
+    font-size: 12px !important;
+    line-height: 32px !important;
+}
+.vue-treeselect--single .vue-treeselect__input {
+    font-size: 12px !important;
+}
+
+.el-tree-node__content>.el-checkbox {
+    margin-right: 8px !important;
+}
