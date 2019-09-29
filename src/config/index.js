@@ -13,7 +13,7 @@ export default {
   /**
    * @description 此处修改网站名称
    */
-  webName: 'WEWIN-ADMIN',
+  webName: '买量-ADMIN',
   /**
    * @description 是否只保持一个子菜单的展开
    */
@@ -57,10 +57,10 @@ export default {
    * 底部文字，支持html语法
    */
   // footerTxt: '© 2019 We-win <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License 2.0</a>',
-  footerTxt: '© 2019 We-win',
+  footerTxt: '© 2019 合肥凯玄网络科技有限公司',
 
   /**
    * 备案号
    */
-  caseNumber: '沪ICP备xxxxxxxx号'
+  caseNumber: ''
 }
