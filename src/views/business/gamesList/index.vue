@@ -4,7 +4,6 @@
     <!--表格渲染-->
     <el-table v-loading="loading" :data="data" size="small" style="width: 100%;">
       <el-table-column prop="id" label="序号"/>
-<!--      <el-table-column prop="customerid" label="客户id"/>-->
       <el-table-column prop="appid" label="AppId"/>
       <el-table-column prop="name" label="名称"/>
       <el-table-column prop="icon" label="图标"/>
@@ -30,10 +29,14 @@
             <p>确定删除本条数据吗？</p>
             <div style="text-align: right; margin: 0">
               <el-button size="mini" type="text" @click="$refs[scope.row.id].doClose()">取消</el-button>
-              <el-button :loading="delLoading" type="primary" size="mini" @click="subDelete(scope.row.id)">确定</el-button>
+              <el-button :loading="delLoading" type="primary" size="mini" @click="subDelete(scope.row.id)">确定
+              </el-button>
             </div>
             <el-button slot="reference" type="danger" icon="el-icon-delete" size="mini"/>
           </el-popover>
+        </template>
+        <template slot-scope="scope">
+          <el-button slot="reference" type="success" size="mini">广告</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -56,49 +59,51 @@
   import edit from './module/edit'
 
   export default {
-  components: { eHeader, edit },
-  mixins: [initData],
-  data() {
-    return {
-      delLoading: false, sup_this: this
-    }
-  },
-  created() {
-    this.$nextTick(() => {
-      this.init()
-    })
-  },
-  methods: {
-    parseTime,
-    checkPermission,
-    beforeInit() {
-      this.url = 'api/games'
-      this.params = { page: this.page, size: this.size }
-      const query = this.query
-      const type = query.type
-      const value = query.value
-      if (type && value) { this.params[type] = value }
-      return true
+    components: { eHeader, edit },
+    mixins: [initData],
+    data() {
+      return {
+        delLoading: false, sup_this: this
+      }
     },
-    subDelete(id) {
-      this.delLoading = true
-      del(id).then(res => {
-        this.delLoading = false
-        this.$refs[id].doClose()
+    created() {
+      this.$nextTick(() => {
         this.init()
-        this.$notify({
-          title: '删除成功',
-          type: 'success',
-          duration: 2500
-        })
-      }).catch(err => {
-        this.delLoading = false
-        this.$refs[id].doClose()
-        console.log(err.response.data.message)
       })
+    },
+    methods: {
+      parseTime,
+      checkPermission,
+      beforeInit() {
+        this.url = 'api/games'
+        this.params = { page: this.page, size: this.size }
+        const query = this.query
+        const type = query.type
+        const value = query.value
+        if (type && value) {
+          this.params[type] = value
+        }
+        return true
+      },
+      subDelete(id) {
+        this.delLoading = true
+        del(id).then(res => {
+          this.delLoading = false
+          this.$refs[id].doClose()
+          this.init()
+          this.$notify({
+            title: '删除成功',
+            type: 'success',
+            duration: 2500
+          })
+        }).catch(err => {
+          this.delLoading = false
+          this.$refs[id].doClose()
+          console.log(err.response.data.message)
+        })
+      }
     }
   }
-}
 </script>
 
 <style scoped>
